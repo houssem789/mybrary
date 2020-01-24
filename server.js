@@ -1,6 +1,7 @@
 //Load envariement variable db user name .. parameters ..
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
+  //test
 }
 
 const express = require("express");
