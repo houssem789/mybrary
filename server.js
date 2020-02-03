@@ -1,7 +1,6 @@
 //Load envariement variable db user name .. parameters ..
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
-  //test
 }
 
 const express = require("express");
@@ -12,6 +11,7 @@ const expressLayouts = require("express-ejs-layouts");
 
 const indexRouter = require("./routes/index");
 const authorRouter = require("./routes/authors");
+const bookRouter = require("./routes/books");
 //Connexion a la base de donnees
 const mongoose = require("mongoose");
 mongoose.connect(process.env.DATABASE_URL, {
@@ -37,6 +37,7 @@ app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
+app.use("/books", bookRouter);
 
 //soit il va se basser sur fichier .env , soit il va regarder le port 3000
 app.listen(process.env.PORT || 3000);
