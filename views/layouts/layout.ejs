@@ -18,6 +18,14 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link
+      href="../javascripts/filepond-master/dist/filepond.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+      rel="stylesheet"
+    />
 
     <title>Mybrary</title>
   </head>
@@ -41,5 +49,32 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <!-- add before </body> -->
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+
+    <!-- image preview package-->
+
+    <script
+      defer
+      src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"
+    ></script>
+    <!-- image resize-->
+    <script
+      defer
+      src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"
+    ></script>
+    <script>
+      // Register the plugin
+      FilePond.registerPlugin(FilePondPluginFileEncode);
+
+      // ... FilePond initialisation code here
+    </script>
+    <!-- add before </body> -->
+    <script
+      defer
+      src="../javascripts/filepond-master/dist/filepond.js"
+    ></script>
+    <script defer src="../javascripts/filepond-master/fileUpload.js"></script>
   </body>
 </html>
