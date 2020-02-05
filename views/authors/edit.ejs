@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2>Edit Author</h2>
+    </div>
+    <form action="/authors/<%= author.id %>?_method=PUT" method="POST">
+      <%- include('_form_fields') %>
+      <a class="btn btn-secondary" href="/authors/<%= author.id %>">Cancel</a>
+      <button class="btn btn-primary" type="submit">Update</button>
+    </form>
+  </div>
+</div>

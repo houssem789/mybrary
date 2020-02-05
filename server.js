@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
 const app = express();
 const expressLayouts = require("express-ejs-layouts");
@@ -34,7 +35,7 @@ app.use(expressLayouts);
 //specifiy public files , styles.css ...
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
-
+app.use(methodOverride("_method"));
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
 app.use("/books", bookRouter);

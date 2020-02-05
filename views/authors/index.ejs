@@ -1,13 +1,54 @@
-<h2>Search Authors</h2>
-
-<form action="/authors" method="GET">
-  <label>Name</label>
-  <input type="text" name="name" value="<%= searchOption.name %>" />
-  <button type="submit">Search</button>
-</form>
-
-<% authors.forEach(author => { %>
-
-<div><%= author.name %></div>
-
-<% }); %>
+<div class="container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2>Search Authors</h2>
+    </div>
+  </div>
+  <form>
+    <div class="form-group" action="/authors" method="GET">
+      <label for="exampleInputEmail1">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="searchAuthor"
+        aria-describedby="searchHelp"
+        placeholder="Enter somthing"
+        name="name"
+        value="<%= searchOption.name %>"
+      />
+      <small id="searchHelp" class="form-text text-muted"
+        >We'll share your data.</small
+      >
+      <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">User details</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% authors.forEach(author => { %>
+      <div class="row">
+        <tr>
+          <th><%= author.name %></th>
+          <td>
+            <div class="row">
+              <a class="btn btn-secondary" href="/authors/<%= author.id %>"
+                >View</a
+              >
+              <a class="btn btn-primary" href="/authors/<%= author.id %>/edit"
+                >Edit</a
+              >
+              <%- include('../partials/deleteForm.ejs', { url:
+              `/authors/${author.id}`}) %>
+            </div>
+          </td>
+        </tr>
+        <% }); %>
+      </div>
+    </tbody>
+  </table>
+</div>
