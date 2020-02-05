@@ -1,0 +1,21 @@
+
+<div class="container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2>Details Author <%= author.name %></h2>
+    </h2>
+    </div>
+  </div>
+  <div class="row">
+    <tr>
+        <a class="btn btn-secondary" href="/authors/<%= author.id %>/edit">Edit</a>
+        <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
+    </tr>
+  </div>
+   <%
+  if (booksByAuthor.length > 0) { %>
+  <h2>Books By <%= author.name %></h2>
+  <% booksByAuthor.forEach(book => { %>
+  <img height="150" width="100" src="<%= book.coverImagePath %>" />
+  <% }) %> <% } %>
+</div>

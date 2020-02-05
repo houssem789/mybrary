@@ -10,7 +10,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -26,12 +25,14 @@
       href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
       rel="stylesheet"
     />
-
     <title>Mybrary</title>
   </head>
   <body>
     <%- include('../partials/header.ejs') %> <%-
-    include('../partials/errorMessage.ejs') %> <%- body %>
+    include('../partials/errorMessage.ejs') %>
+    <div style="background-color:#e6f2ff;">
+      <%- body %>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -52,9 +53,7 @@
     <!-- add before </body> -->
     <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
     <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-
     <!-- image preview package-->
-
     <script
       defer
       src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"
@@ -67,7 +66,6 @@
     <script>
       // Register the plugin
       FilePond.registerPlugin(FilePondPluginFileEncode);
-
       // ... FilePond initialisation code here
     </script>
     <!-- add before </body> -->
