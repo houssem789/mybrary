@@ -39,7 +39,9 @@
   <div class="form-group">
     <% books.forEach(book => { %>
     <!-- coverImagePath : is a properties that we are going o create that will giv us the real path for the uploaded file ==> Virtual Property-->
-    <img height="150" width="100" src="<%= book.coverImagePath %>" />
+    <a href="/books/<%= book.id %>">
+      <img height="150" width="100" src="<%= book.coverImagePath %>" />
+    </a>
     <% }); %>
   </div>
 </div>
